@@ -3,22 +3,17 @@
 project/
 ├── index.html
 ├── css/
-│   ├── variables.css      (CSS-переменные темы)
+│   ├── variables.css      (CSS-переменные для светлой/тёмной темы)
 │   ├── layout.css         (Сетка и структура)
-│   ├── components.css     (Карточки, кнопки, меню)
+│   ├── components.css     (Карточки, кнопки, переключатель темы)
 │   └── typography.css     (Шрифты и текст)
 ├── js/
-│   ├── config.js          (Настройки и языки)
+│   ├── config.js          (Настройки)
 │   ├── data-loader.js     (Загрузка данных)
 │   ├── card-manager.js    (Логика карточек)
-│   ├── ui-manager.js      (Интерфейс и модальные окна)
+│   ├── ui-manager.js      (Интерфейс)
+│   ├── theme-manager.js   (Переключение тем)
 │   └── app.js             (Инициализация)
-├── data/
-│   ├── cards-en.json      (Карточки на английском)
-│   ├── cards-ru.json      (Карточки на русском)
-│   ├── cards-fa.json      (Персидский - заготовка)
-│   ├── cards-es.json      (Испанский - заготовка)
-│   └── cards-kk.json      (Казахский - заготовка)
-└── assets/
-    └── (изображения, если понадобятся)
+└── data/
+    └── cards.json         (Данные карточек)
 ```
