@@ -1,0 +1,47 @@
+{
+    "card-1": {
+        "side1": "DANAYI",
+        "side2": "System v1.0",
+        "type": "medium"
+    },
+    "card-2": {
+        "side1": "FLIP",
+        "side2": "Click to reveal",
+        "type": "compact"
+    },
+    "card-3": {
+        "side1": "S",
+        "side2": "Compact size",
+        "type": "compact"
+    },
+    "card-4": {
+        "side1": "MEDIUM",
+        "side2": "Standard size",
+        "type": "medium"
+    },
+    "card-5": {
+        "side1": "WIDE",
+        "side2": "Extended size",
+        "type": "wide"
+    },
+    "card-6": {
+        "side1": "EDIT",
+        "side2": "Right-click menu",
+        "type": "compact"
+    },
+    "card-7": {
+        "side1": "DELETE",
+        "side2": "Remove card",
+        "type": "compact"
+    },
+    "card-8": {
+        "side1": "TYPE",
+        "side2": "S / M / L",
+        "type": "compact"
+    },
+    "card-9": {
+        "side1": "RESET",
+        "side2": "Clear all data",
+        "type": "medium"
+    }
+}
