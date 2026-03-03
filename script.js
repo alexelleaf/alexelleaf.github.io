@@ -1,5 +1,5 @@
 /* =============================================================================
-   SCRIPT: TYPEWRITER DOCUMENT LOGIC (LIGHT THEME)
+   SCRIPT: TYPEWRITER DOCUMENT LOGIC
    ============================================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
