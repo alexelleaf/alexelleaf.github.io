@@ -1,17 +1,29 @@
 /* =============================================================================
-   STYLE: TYPEWRITER DOCUMENT (LIGHT THEME INVERTED)
-   PALETTE: #000000 (text), #FEFEFE (bg), #7A7A7A (secondary), #A90414 (accent)
+   STYLE: TYPEWRITER DOCUMENT (AUTO THEME SWITCHING)
    ============================================================================= */
 
 :root {
-    --color-bg: #FEFEFE;
-    --color-text: #000000;
+    /* DEFAULT THEME: DARK */
+    --color-bg: #000000;
+    --color-text: #FEFEFE;
     --color-secondary: #7A7A7A;
     --color-accent: #A90414;
+    --color-border: #FEFEFE;
+    
     --font-main: 'Courier Prime', monospace;
     --font-typo: 'Special Elite', monospace;
     --size-text: 12px;
-    --size-spacing: 10px;
+}
+
+/* LIGHT THEME OVERRIDE */
+@media (prefers-color-scheme: light) {
+    :root {
+        --color-bg: #FEFEFE;
+        --color-text: #000000;
+        --color-secondary: #7A7A7A;
+        --color-accent: #A90414;
+        --color-border: #000000;
+    }
 }
 
 * {
@@ -27,6 +39,7 @@ body {
     font-size: var(--size-text);
     line-height: 1.6;
     padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* SCROLLBAR */
