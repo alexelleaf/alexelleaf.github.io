@@ -1,9 +1,59 @@
 /* =============================================================================
-   SCRIPT: TYPEWRITER DOCUMENT LOGIC
+   SCRIPT: TYPEWRITER DOCUMENT LOGIC + THEME TOGGLE
    ============================================================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log('■ SYSTEM READY ■');
+
+    /* ---------------------------------------------------------------------
+       THEME TOGGLE FUNCTIONALITY
+       --------------------------------------------------------------------- */
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check for saved theme preference or default to system preference
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+    // Apply saved theme or system preference
+    if (savedTheme === 'light') {
+        body.classList.add('light-theme');
+        body.classList.remove('dark-theme');
+    } else if (savedTheme === 'dark') {
+        body.classList.add('dark-theme');
+        body.classList.remove('light-theme');
+    }
+
+    // Update toggle button text based on current theme
+    const updateToggleText = () => {
+        const isLight = body.classList.contains('light-theme') || 
+                       (!body.classList.contains('dark-theme') && systemPrefersLight);
+        themeToggle.textContent = isLight ? 'go to dark' : 'go to light';
+    };
+
+    // Initialize toggle text
+    updateToggleText();
+
+    // Toggle theme on click
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('light-theme')) {
+            body.classList.remove('light-theme');
+            body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            body.classList.remove('dark-theme');
+            body.classList.add('light-theme');
+            localStorage.setItem('theme', 'light');
+        }
+        updateToggleText();
+    });
+
+    // Listen for system theme changes (if no manual override)
+    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            updateToggleText();
+        }
+    });
 
     /* ---------------------------------------------------------------------
        TYPEWRITER EFFECT FOR TITLE
