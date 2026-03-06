@@ -1,58 +1,86 @@
 /* =============================================================================
-   SCRIPT: TYPEWRITER DOCUMENT LOGIC + THEME TOGGLE
-   ============================================================================= */
-
+SCRIPT: NOIR DOCUMENT LOGIC + THEME TOGGLE (FIXED)
+============================================================================= */
 document.addEventListener('DOMContentLoaded', () => {
     console.log('■ SYSTEM READY ■');
 
     /* ---------------------------------------------------------------------
-       THEME TOGGLE FUNCTIONALITY
+       THEME TOGGLE - DARK DEFAULT ONLY
        --------------------------------------------------------------------- */
     const themeToggle = document.getElementById('theme-toggle');
     const body = document.body;
 
-    // Check for saved theme preference or default to system preference
-    const savedTheme = localStorage.getItem('theme');
-    const systemPrefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-
-    // Apply saved theme or system preference
-    if (savedTheme === 'light') {
-        body.classList.add('light-theme');
-        body.classList.remove('dark-theme');
-    } else if (savedTheme === 'dark') {
+    // Force dark theme on load, ignore system preference
+    if (!body.classList.contains('dark-theme') && !body.classList.contains('light-theme')) {
         body.classList.add('dark-theme');
-        body.classList.remove('light-theme');
     }
 
-    // Update toggle button text based on current theme
     const updateToggleText = () => {
-        const isLight = body.classList.contains('light-theme') || 
-                       (!body.classList.contains('dark-theme') && systemPrefersLight);
-        themeToggle.textContent = isLight ? 'во тьму' : 'на свет';
+        const isLight = body.classList.contains('light-theme');
+        themeToggle.textContent = isLight ? 'В ТЬМУ' : 'НА СВЕТ';
     };
 
-    // Initialize toggle text
     updateToggleText();
 
-    // Toggle theme on click
     themeToggle.addEventListener('click', () => {
         if (body.classList.contains('light-theme')) {
             body.classList.remove('light-theme');
             body.classList.add('dark-theme');
-            localStorage.setItem('theme', 'dark');
         } else {
             body.classList.remove('dark-theme');
             body.classList.add('light-theme');
-            localStorage.setItem('theme', 'light');
         }
         updateToggleText();
     });
 
-    // Listen for system theme changes (if no manual override)
-    window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-            updateToggleText();
-        }
+    /* ---------------------------------------------------------------------
+       CASE FILE ACCORDION (PROFILE SECTION)
+       --------------------------------------------------------------------- */
+    const caseFileHeaders = document.querySelectorAll('.case-file-header');
+    
+    caseFileHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+            const file = header.parentElement;
+            const isExpanded = file.classList.contains('expanded');
+            
+            // Close all others (optional - remove if you want multiple open)
+            document.querySelectorAll('.case-file').forEach(f => {
+                if (f !== file) f.classList.remove('expanded');
+            });
+            
+            // Toggle current
+            file.classList.toggle('expanded', !isExpanded);
+        });
+        
+        // Keyboard support
+        header.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                header.click();
+            }
+        });
+    });
+
+    /* ---------------------------------------------------------------------
+       NEWSPAPER STACK INTERACTION (TRANSCRIPTS)
+       --------------------------------------------------------------------- */
+    const newspapers = document.querySelectorAll('.newspaper');
+    
+    newspapers.forEach(paper => {
+        paper.addEventListener('click', (e) => {
+            // Prevent toggle if clicking on interactive elements inside
+            if (e.target.closest('a') || e.target.closest('.redacted')) return;
+            
+            const isExpanded = paper.dataset.expanded === 'true';
+            
+            // Close others for "stack" effect
+            newspapers.forEach(p => {
+                p.dataset.expanded = 'false';
+            });
+            
+            // Toggle current
+            paper.dataset.expanded = isExpanded ? 'false' : 'true';
+        });
     });
 
     /* ---------------------------------------------------------------------
@@ -71,7 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 setTimeout(typeWriter, 100);
             }
         };
-
         setTimeout(typeWriter, 500);
     }
 
@@ -83,7 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             if (targetId === '#') return;
-            
+             
             const target = document.querySelector(targetId);
             if (target) {
                 target.scrollIntoView({
@@ -112,9 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     const animatedElements = document.querySelectorAll(
-        '.text-block, .section-title, .quest-item, .work-entry, .timeline-item'
+        '.case-file, .text-block, .section-title, .press-clipping, .work-entry, .timeline-item'
     );
-    
+
     animatedElements.forEach(el => {
         observer.observe(el);
     });
