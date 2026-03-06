@@ -10,8 +10,8 @@
     --color-accent: #A90414;
     --color-border: #FEFEFE;
     
-    --font-main: 'PT Mono', monospace;
-    --font-typo: 'JetBrains Mono', monospace;
+    --font-main: 'JetBrains Mono', monospace;
+    --font-typo: 'JetBrains Mono', monospace, bold;
     --size-text: 13px;
 }
 
