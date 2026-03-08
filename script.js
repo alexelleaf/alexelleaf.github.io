@@ -1,4 +1,3 @@
-// Modal Functions
 function showContactModal() {
     const modal = document.getElementById('contactModal');
     modal.classList.add('active');
@@ -11,23 +10,18 @@ function closeContactModal() {
     document.body.style.overflow = '';
 }
 
-// Close modal on Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeContactModal();
     }
 });
 
-// Form Submission
 document.querySelector('.contact-form')?.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    // Here you would typically send data to a server
-    alert('Ваш запрос принят. Я свяжусь с Вами в ближайшее время.');
+    alert('Запрос принят. Контакт будет установлен в ближайшее время.');
     closeContactModal();
 });
 
-// Smooth scroll for navigation
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -41,23 +35,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Header Hide/Show on Scroll
 let lastScrollY = window.scrollY;
 const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
     const currentScrollY = window.scrollY;
-    
     if (currentScrollY > lastScrollY && currentScrollY > 100) {
         header.classList.add('hidden');
     } else {
         header.classList.remove('hidden');
     }
-    
     lastScrollY = currentScrollY;
 });
 
-// Fade-in animation on scroll
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -72,8 +62,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe all cards and blocks
-document.querySelectorAll('.service-card, .content-block, .case-card, .contact-card').forEach(el => {
+document.querySelectorAll('.service-card, .case-card, .contact-card, .about-content').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
