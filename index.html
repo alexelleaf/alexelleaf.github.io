@@ -8,240 +8,71 @@
 </head>
 <body>
     <div class="document-page">
-        <!-- Верхняя панель -->
-        <div class="top-bar">
+        <header class="top-bar">
             <div class="page-title">
-                <span class="head-marker"></span>
+                <div class="head-marker"></div>
                 ALEX EL LEAF // БЮРО
             </div>
             <button id="theme-toggle" class="theme-toggle">ВО ТЬМУ</button>
-        </div>
+        </header>
 
-        <!-- ДОСЬЕ (Полная ширина, вверху) -->
-        <section id="about" class="content-section full-width">
-            <h3 class="section-title">
-                <span class="head-marker"></span>
-                Досье
-            </h3>
-            <div class="about-layout">
-                <div class="about-image">
-                    <div class="image-frame">
-                        <div class="image-placeholder">
-                            <span class="placeholder-text">ФОТО<br/>ДЕТЕКТИВА</span>
-                        </div>
-                    </div>
-                    <p class="image-caption">Идентификация: Подтверждена</p>
-                </div>
-                <div class="about-content">
-                    <p class="about-lead">Более 25 лет опыта в правоохранительных органах и частных расследованиях. Специализация на сложных делах.</p>
-                    <p class="about-text">Работаю строго в рамках законодательства РФ. Гарантирую полную конфиденциальность и тщательность расследования.</p>
-                    <div class="credentials-grid">
-                        <div class="credential-item">
-                            <span class="credential-number">500+</span>
-                            <span class="credential-label">Завершённых Дел</span>
-                        </div>
-                        <div class="credential-item">
-                            <span class="credential-number">25</span>
-                            <span class="credential-label">Лет Опыта</span>
-                        </div>
-                        <div class="credential-item">
-                            <span class="credential-number">100%</span>
-                            <span class="credential-label">Конфиденциально</span>
-                        </div>
-                    </div>
-                    <ul class="about-list">
-                        <li><span class="list-marker"></span> Лицензия МВД РФ</li>
-                        <li><span class="list-marker"></span> Бывший Сотрудник Правоохранительных Органов</li>
-                        <li><span class="list-marker"></span> Член Профессиональной Ассоциации</li>
-                        <li><span class="list-marker"></span> Постоянное Повышение Квалификации</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <div class="main-grid">
-            <!-- ЛЕВАЯ КОЛОНКА: Услуги и Расписание -->
+        <main class="main-grid">
             <div class="left-column">
-                
-                <!-- Секция Услуг -->
-                <div class="content-section">
+                <!-- Dossier Section (Large Block) -->
+                <section id="about" class="content-section full-width dossier-section">
                     <div class="section-title">
-                        <span class="head-marker"></span>
-                        Услуги
+                        <div class="list-marker"></div>
+                        Досье
                     </div>
                     
-                    <div class="timeline-item expandable">
-                        <div class="timeline-date">СЕКРЕТНО 01</div>
-                        <div class="timeline-event">Наружное Наблюдение</div>
-                        <div class="timeline-note">
-                            Профессиональное слежение. Фото и видеофиксация.
-                            <span class="expand-arrow">▼</span>
+                    <div class="about-layout">
+                        <div class="about-image">
+                            <div class="image-frame">
+                                <div class="image-placeholder">
+                                    <span class="placeholder-text">ФОТО<br>ДЕТЕКТИВА</span>
+                                </div>
+                            </div>
+                            <div class="image-caption">Идентификация: Подтверждена</div>
                         </div>
-                        <div class="expandable-content">
-                            <p><strong>GPS-мониторинг:</strong> Отслеживание перемещений в реальном времени.</p>
-                            <p><strong>Отчётность:</strong> Детальный лог действий объекта.</p>
-                            <p class="text-highlight">От 5000 ₽/час</p>
+                        <div class="about-content">
+                            <div class="about-lead">
+                                Более 25 лет опыта в правоохранительных органах и частных расследованиях. Специализация на сложных делах.
+                            </div>
+                            <div class="about-text">
+                                Работаю строго в рамках законодательства РФ. Гарантирую полную конфиденциальность и тщательность расследования.
+                            </div>
+                            
+                            <div class="credentials-grid">
+                                <div class="credential-item">
+                                    <span class="credential-number">500+</span>
+                                    <span class="credential-label">Завершённых Дел</span>
+                                </div>
+                                <div class="credential-item">
+                                    <span class="credential-number">25</span>
+                                    <span class="credential-label">Лет Опыта</span>
+                                </div>
+                                <div class="credential-item">
+                                    <span class="credential-number">100%</span>
+                                    <span class="credential-label">Конфиденциально</span>
+                                </div>
+                            </div>
+
+                            <ul class="about-list">
+                                <li><div class="list-marker"></div>Лицензия МВД РФ</li>
+                                <li><div class="list-marker"></div>Бывший Сотрудник Правоохранительных Органов</li>
+                                <li><div class="list-marker"></div>Член Профессиональной Ассоциации</li>
+                                <li><div class="list-marker"></div>Постоянное Повышение Квалификации</li>
+                            </ul>
                         </div>
                     </div>
+                </section>
 
-                    <div class="timeline-item expandable">
-                        <div class="timeline-date">СЕКРЕТНО 02</div>
-                        <div class="timeline-event">Сбор Информации</div>
-                        <div class="timeline-note">
-                            Проверка контрагентов, поиск через базы данных.
-                            <span class="expand-arrow">▼</span>
-                        </div>
-                        <div class="expandable-content">
-                            <p>Проверка юридических и физических лиц. Архивные запросы.</p>
-                            <p class="text-highlight">От 15000 ₽</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item expandable">
-                        <div class="timeline-date">СЕКРЕТНО 03</div>
-                        <div class="timeline-event">Корпоративные Расследования</div>
-                        <div class="timeline-note">
-                            Защита бизнес-интересов. Внутренние проверки.
-                            <span class="expand-arrow">▼</span>
-                        </div>
-                        <div class="expandable-content">
-                            <p>Внутренний аудит, выявление мошенничества, проверка сотрудников.</p>
-                            <p class="text-highlight">Индивидуально</p>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item expandable">
-                        <div class="timeline-date">СЕКРЕТНО 04</div>
-                        <div class="timeline-event">Защита от Шпионажа</div>
-                        <div class="timeline-note">
-                            Обнаружение прослушивающих устройств.
-                            <span class="expand-arrow">▼</span>
-                        </div>
-                        <div class="expandable-content">
-                            <p>Сканирование помещений, проверка техники, анализ угроз.</p>
-                            <p class="text-highlight">От 25000 ₽</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Секция Расписание -->
-                <div class="content-section">
+                <!-- Archive Section -->
+                <section class="content-section full-width archive-section">
                     <div class="section-title">
-                        <span class="head-marker"></span>
-                        Расписание
-                    </div>
-
-                    <div class="schedule-toggle">
-                        <button id="schedule-weekday" class="schedule-btn active">Будни</button>
-                        <button id="schedule-weekend" class="schedule-btn">Выходные</button>
-                    </div>
-
-                    <div class="timeline-container">
-                        <div class="timeline-line"></div>
-
-                        <!-- Будни -->
-                        <div class="timeline-item expandable" data-day-type="weekday" data-time-start="07:00" data-time-end="07:15">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">07:00 – 07:15</div>
-                                <div class="timeline-event">Get Up</div>
-                                <div class="timeline-note">
-                                    Do some exercises.
-                                    <span class="expand-arrow">▼</span>
-                                </div>
-                                <div class="expandable-content">
-                                    <p>#1: Встать.</p>
-                                    <p>#2: Заправить постель.</p>
-                                    <p>#3: Walk 10 min.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item expandable" data-day-type="weekday" data-time-start="09:00" data-time-end="12:00">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">09:00 – 12:00</div>
-                                <div class="timeline-event">Рабочая Сессия #1</div>
-                                <div class="timeline-note">
-                                    Глубокая работа над приоритетными задачами.
-                                    <span class="expand-arrow">▼</span>
-                                </div>
-                                <div class="expandable-content">
-                                    <p><strong>Фокус:</strong> Одна ключевая задача без прерываний.</p>
-                                    <p><strong>Метод:</strong> Pomodoro 50/10, отключение уведомлений.</p>
-                                    <p>По завершении — фиксация результата в журнале.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item expandable" data-day-type="weekday" data-time-start="18:30" data-time-end="19:40">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">18:30 – 19:40</div>
-                                <div class="timeline-event">Sport Set #2</div>
-                                <div class="timeline-note">
-                                    Do some exercises.
-                                    <span class="expand-arrow">▼</span>
-                                </div>
-                                <div class="expandable-content">
-                                    <p>Run: 3 min (goal: ?).</p>
-                                    <p>Squats: 30 reps.</p>
-                                    <p>Push-ups (Chest): 10 reps.</p>
-                                    <p>Back: 20 reps.</p>
-                                    <p>Push-ups (Triceps): 10 reps.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Выходные -->
-                        <div class="timeline-item expandable hidden" data-day-type="weekend" data-time-start="07:00" data-time-end="09:00">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">07:00 – 09:00</div>
-                                <div class="timeline-event">Sport</div>
-                                <div class="timeline-note">
-                                    Do some exercises.
-                                    <span class="expand-arrow">▼</span>
-                                </div>
-                                <div class="expandable-content">
-                                    <p>Run: 3 min.</p>
-                                    <p>Squats: 30 reps.</p>
-                                    <p>Push-ups (Chest): 10 reps.</p>
-                                    <p>Back: 10 reps.</p>
-                                    <p>Push-ups (Triceps): 10 reps.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="timeline-item expandable hidden" data-day-type="weekend" data-time-start="11:00" data-time-end="11:30">
-                            <div class="timeline-marker"></div>
-                            <div class="timeline-content">
-                                <div class="timeline-date">11:00 – 11:30</div>
-                                <div class="timeline-event">Аффирмации</div>
-                                <div class="timeline-note">
-                                    Прогулка, спорт, встреча с друзьями.
-                                    <span class="expand-arrow">▼</span>
-                                </div>
-                                <div class="expandable-content">
-                                    <p><strong>Цель:</strong> Физическая активность или социальное взаимодействие.</p>
-                                    <p><strong>Варианты:</strong> Велосипед, парк, кафе, настольные игры.</p>
-                                    <p class="samurai-text">Я самурай, мой путь — это стремление...</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ПРАВАЯ КОЛОНКА: Архив и Контакты -->
-            <div class="right-column">
-                
-                <!-- АРХИВ ДЕЛ (Полная ширина колонки) -->
-                <section id="cases" class="content-section full-width">
-                    <h3 class="section-title">
-                        <span class="head-marker"></span>
+                        <div class="list-marker"></div>
                         Архив Дел
-                    </h3>
+                    </div>
                     <div class="cases-grid">
                         <div class="case-card">
                             <div class="case-header">
@@ -251,10 +82,14 @@
                             <h4>Поиск Пропавшего Наследника</h4>
                             <p>Установление местонахождения через архивы ЗАГС и базы данных.</p>
                             <div class="case-meta">
-                                <span class="meta-label">Срок:</span>
-                                <span class="meta-value">14 дней</span>
-                                <span class="meta-label">Категория:</span>
-                                <span class="meta-value">Поиск</span>
+                                <div>
+                                    <div class="meta-label">Срок</div>
+                                    <div class="meta-value">14 дней</div>
+                                </div>
+                                <div>
+                                    <div class="meta-label">Категория</div>
+                                    <div class="meta-value">Поиск</div>
+                                </div>
                             </div>
                             <div class="case-footer">
                                 <span class="case-date">15.03.2023</span>
@@ -269,10 +104,14 @@
                             <h4>Корпоративное Расследование</h4>
                             <p>Выявление источника утечки коммерческой информации.</p>
                             <div class="case-meta">
-                                <span class="meta-label">Срок:</span>
-                                <span class="meta-value">21 день</span>
-                                <span class="meta-label">Категория:</span>
-                                <span class="meta-value">Бизнес</span>
+                                <div>
+                                    <div class="meta-label">Срок</div>
+                                    <div class="meta-value">21 день</div>
+                                </div>
+                                <div>
+                                    <div class="meta-label">Категория</div>
+                                    <div class="meta-value">Бизнес</div>
+                                </div>
                             </div>
                             <div class="case-footer">
                                 <span class="case-date">28.06.2023</span>
@@ -287,100 +126,144 @@
                             <h4>Сбор Доказательств для Суда</h4>
                             <p>Документирование фактов для бракоразводного процесса.</p>
                             <div class="case-meta">
-                                <span class="meta-label">Срок:</span>
-                                <span class="meta-value">30 дней</span>
-                                <span class="meta-label">Категория:</span>
-                                <span class="meta-value">Семейное Право</span>
+                                <div>
+                                    <div class="meta-label">Срок</div>
+                                    <div class="meta-value">30 дней</div>
+                                </div>
+                                <div>
+                                    <div class="meta-label">Категория</div>
+                                    <div class="meta-value">Семейное Право</div>
+                                </div>
                             </div>
                             <div class="case-footer">
                                 <span class="case-date">12.01.2024</span>
                                 <span class="case-result">✓ Успешно</span>
                             </div>
                         </div>
+                        <div class="case-card">
+                            <div class="case-header">
+                                <span class="case-number">ДЕЛО №201-2024</span>
+                                <span class="case-status case-closed">ЗАВЕРШЕНО</span>
+                            </div>
+                            <h4>Проверка Контрагента</h4>
+                            <p>Комплексная проверка юридического лица перед сделкой.</p>
+                            <div class="case-meta">
+                                <div>
+                                    <div class="meta-label">Срок</div>
+                                    <div class="meta-value">7 дней</div>
+                                </div>
+                                <div>
+                                    <div class="meta-label">Категория</div>
+                                    <div class="meta-value">Бизнес</div>
+                                </div>
+                            </div>
+                            <div class="case-footer">
+                                <span class="case-date">05.02.2024</span>
+                                <span class="case-result">✓ Успешно</span>
+                            </div>
+                        </div>
                     </div>
                 </section>
-<div class="content-section">
-    <div class="section-title">
-        <span class="head-marker"></span>
-        СПРАВОЧНАЯ ИНФОРМАЦИЯ
-    </div>
-
-    <div class="text-module">
-        <div class="text-module-title">Основные положения</div>
-        <div class="text-module-content">
-            <p>Ниже приведены ключевые пункты регламента и таблица ресурсов.</p>
-
-            <!-- Список -->
-            <ul class="info-list">
-                <li>Соблюдение временных интервалов обязательно.</li>
-                <li>Отчетность формируется в конце рабочей смены.</li>
-                <li>Использование личных устройств ограничено.</li>
-            </ul>
-
-            <!-- Таблица -->
-            <div class="table-wrapper">
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Ресурс</th>
-                            <th>Статус</th>
-                            <th>Доступ</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>База знаний</td>
-                            <td>Активен</td>
-                            <td>Открытый</td>
-                        </tr>
-                        <tr>
-                            <td>Архив отчетов</td>
-                            <td>Обновление</td>
-                            <td>Только чтение</td>
-                        </tr>
-                        <tr>
-                            <td>Контакты</td>
-                            <td>Активен</td>
-                            <td>Закрытый</td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
-        </div>
-    </div>
-</div>
-                <!-- Секция Контакты -->
-                <div class="content-section">
+
+            <div class="right-column">
+                <!-- Contact Channels Section (Small Block) -->
+                <section class="content-section contacts-section">
                     <div class="section-title">
-                        <span class="head-marker"></span>
+                        <div class="list-marker"></div>
                         Каналы Связи
                     </div>
-
-                    <div class="timeline-item non-expandable">
-                        <div class="timeline-date">📞 ТЕЛЕФОН</div>
-                        <div class="timeline-event">+7 (999) 000-00-00</div>
-                        <div class="timeline-note">Доступен 24/7</div>
+                    <div class="contact-compact-grid">
+                        <div class="contact-compact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <span class="contact-label">Телефон</span>
+                                <span class="contact-value">+7 (999) 000-00-00</span>
+                            </div>
+                        </div>
+                        <div class="contact-compact-item">
+                            <div class="contact-icon">✉</div>
+                            <div class="contact-details">
+                                <span class="contact-label">Почта</span>
+                                <span class="contact-value">secure@bureau.ru</span>
+                            </div>
+                        </div>
+                        <div class="contact-compact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <span class="contact-label">Офис</span>
+                                <span class="contact-value">Москва, ул. Секретная, 19</span>
+                            </div>
+                        </div>
+                        <button class="contact-btn" onclick="showContactModal()">Установить Контакт</button>
                     </div>
+                </section>
 
-                    <div class="timeline-item non-expandable">
-                        <div class="timeline-date">✉ ПОЧТА</div>
-                        <div class="timeline-event">secure@bureau.ru</div>
-                        <div class="timeline-note">Шифрованное соединение</div>
+                <!-- Info Section -->
+                <section class="content-section full-height">
+                    <div class="section-title">
+                        <div class="list-marker"></div>
+                        Справочная Информация
                     </div>
-
-                    <div class="timeline-item non-expandable">
-                        <div class="timeline-date">📍 ОФИС</div>
-                        <div class="timeline-event">Москва, ул. Секретная, 19</div>
-                        <div class="timeline-note">По записи</div>
+                    <div class="info-tabs">
+                        <button class="tab-btn active" data-tab="protocols">Протоколы</button>
+                        <button class="tab-btn" data-tab="resources">Ресурсы</button>
+                        <button class="tab-btn" data-tab="recommendations">Рекомендации</button>
                     </div>
-
-                    <button class="contact-btn" onclick="showContactModal()">УСТАНОВИТЬ КОНТАКТ</button>
-                </div>
+                    <div class="info-content">
+                        <div id="protocols" class="text-module active">
+                            <div class="text-module-title">Единственная задача в моменте</div>
+                            <div class="text-module-content">
+                                <p>Многозадачность запрещена. Внимание направляется исключительно на текущий процесс.</p>
+                                <p>Отключение уведомлений на период рабочей сессии.</p>
+                                <p>Фиксация результата до завершения дня.</p>
+                                <p>Анализ выполненных действий.</p>
+                            </div>
+                        </div>
+                        <div id="resources" class="text-module">
+                            <div class="text-module-title">Доступ к библиотеке</div>
+                            <div class="text-module-content">
+                                <p>Шаблоны отчётов, чек-листы и методические материалы.</p>
+                                <div class="table-wrapper">
+                                    <table class="data-table">
+                                        <thead>
+                                            <tr>
+                                                <th>Ресурс</th>
+                                                <th>Статус</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>База знаний</td>
+                                                <td>Активен</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Архив отчетов</td>
+                                                <td>Обновление</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="recommendations" class="text-module">
+                            <div class="text-module-title">Обновление шаблонов</div>
+                            <div class="text-module-content">
+                                <ul class="info-list">
+                                    <li>Обновление шаблонов и чек-листов.</li>
+                                    <li>Проверка актуальности контактов.</li>
+                                    <li>Еженедельный обзор ресурсов.</li>
+                                    <li>Проверка средств связи.</li>
+                                    <li>Резервное копирование данных.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
-        </div>
+        </main>
 
-        <!-- Футер -->
-        <div class="footer">
+        <footer class="footer">
             <div class="footer-bottom">
                 <div class="footer-divider">
                     <div class="divider-line"></div>
@@ -390,10 +273,10 @@
                 <p>© 2025 БЮРО. Все права защищены.</p>
                 <p class="footer-archive">Дело №2025-001</p>
             </div>
-        </div>
+        </footer>
     </div>
 
-    <!-- Модальное окно -->
+    <!-- Modal -->
     <div id="contactModal" class="modal">
         <div class="modal-backdrop" onclick="closeContactModal()"></div>
         <div class="modal-content">
@@ -427,7 +310,7 @@
                     <textarea rows="4" required></textarea>
                 </div>
                 <button type="submit" class="submit-btn">Отправить Запрос</button>
-                <p class="modal-note">🔒 Конфиденциальность гарантирована</p>
+                <div class="modal-note">🔒 Конфиденциальность гарантирована</div>
             </form>
         </div>
     </div>
