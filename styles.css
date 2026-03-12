@@ -1048,32 +1048,32 @@ ANIMATIONS
 }
 
 /* =============================================================================
-CUSTOM SCROLLBAR - DARK THEME
+CUSTOM SCROLLBAR - THEME AWARE
 ============================================================================= */
 
-/* Для WebKit браузеров (Chrome, Safari, Edge) */
+/* Для WebKit браузеров (Chrome, Safari, Edge, Opera) */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
-  border-left: 1px solid var(--color-border);
+    background: var(--color-bg);
+    border-left: 1px solid var(--color-border);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-border);
-  border-radius: 4px;
-  transition: background 0.2s ease;
+    background: var(--color-border);
+    border-radius: 4px;
+    transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent);
+    background: var(--color-accent);
 }
 
 /* Для Firefox */
 * {
-  scrollbar-width: thin;
-  scrollbar-color: var(--color-border) var(--color-bg);
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) var(--color-bg);
 }
