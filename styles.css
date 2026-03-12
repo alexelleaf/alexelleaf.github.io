@@ -72,7 +72,7 @@ LAYOUT
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 14px 10px;
+  padding: 5px 0px 15px 5px;
   margin-bottom: var(--spacing-lg);
   border-bottom: 2px solid var(--color-border);
 }
@@ -190,6 +190,14 @@ DOSSIER SECTION - OPTIMIZED
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-border);
+}
+
+.image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .placeholder-text {
@@ -733,7 +741,7 @@ FOOTER
 .footer {
   border-top: 1px solid var(--color-border);
   padding: 1rem 1rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 }
 
 .footer-bottom {
@@ -773,6 +781,11 @@ UTILITIES
   transition: all 0.2s ease;
 }
 
+/* Скрываем мобильное изображение на десктопе по умолчанию */
+.about-image-mobile {
+  display: none;
+}
+
 /* =============================================================================
 RESPONSIVE - TABLET (1024px)
 ============================================================================= */
@@ -793,11 +806,13 @@ RESPONSIVE - TABLET (1024px)
 
   /* Изменения для архива и мобильного списка */
   .archive-section {
-    display: none; /* Скрываем архив на планшетах */
+    display: none;
+    /* Скрываем архив на планшетах */
   }
 
   .mobile-projects-section {
-    display: block; /* Показываем мобильный список на планшетах */
+    display: block;
+    /* Показываем мобильный список на планшетах */
   }
 
   .cases-grid {
@@ -805,12 +820,26 @@ RESPONSIVE - TABLET (1024px)
     overflow-y: visible;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Уменьшение отступов вокруг изображения */
+  .about-image {
+    margin-right: var(--spacing-sm);
+    /* Уменьшено с var(--spacing-md) */
+    margin-bottom: var(--spacing-xs);
+    /* Уменьшено с var(--spacing-sm) */
+  }
+
+  /* Уменьшение внутреннего отступа рамки */
+  .about-image .image-frame {
+    padding: var(--spacing-xs);
+    /* Уменьшено с var(--spacing-sm) */
+  }
 }
 
 /* =============================================================================
 RESPONSIVE - MOBILE (768px)
 ============================================================================= */
-@media (max-width: 768px) {
+@media (max-width: 550px) {
   :root {
     --size-text: 14px;
     --spacing-md: 14px;
@@ -832,12 +861,32 @@ RESPONSIVE - MOBILE (768px)
   }
 
   .theme-toggle {
-    padding: 6px 12px;
+    padding: 5px 10px;
     font-size: 9px;
   }
 
   .content-section {
     padding: var(--spacing-sm);
+  }
+
+
+  /* Показываем только на мобильных устройствах (768px и меньше) */
+  .about-image-mobile {
+    display: block;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .about-image-mobile .image-frame {
+    padding: var(--spacing-xs);
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .about-image-mobile .image-placeholder {
+    aspect-ratio: 3/4;
+    min-height: 150px;
+    max-width: 200px;
+    margin: 0 auto;
   }
 
   /* About Section Mobile - COMPACT */
@@ -970,13 +1019,14 @@ RESPONSIVE - SMALL MOBILE (480px)
   }
 
   .credentials-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-sm);
+    padding: var(--spacing-md) 0;
   }
 
   .credential-item {
-    padding: var(--spacing-xs);
-    border: 1px solid var(--color-border);
+    padding: 0;
+    border: none;
   }
 
   .mobile-project-item {
@@ -1007,6 +1057,7 @@ ANIMATIONS
     opacity: 0;
     transform: translateY(10px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -1033,13 +1084,16 @@ body::-webkit-scrollbar {
 
 html,
 body {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE и Edge */
 }
 
 /* Возвращение скроллбара для контейнера архива (.cases-grid) */
 .cases-grid::-webkit-scrollbar {
-  width: 6px; /* Узкая полоса */
+  width: 6px;
+  /* Узкая полоса */
   height: 6px;
   display: block;
 }
@@ -1060,6 +1114,7 @@ body {
 }
 
 .cases-grid {
-  scrollbar-width: thin; /* Firefox */
+  scrollbar-width: thin;
+  /* Firefox */
   scrollbar-color: var(--color-border) var(--color-bg);
 }
