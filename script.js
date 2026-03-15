@@ -142,6 +142,10 @@ if (contactForm) {
             mobileImageContainer.innerHTML = desktopImageContainer.innerHTML;
         }
 
-        // ... остальной существующий код ...
+    
     });
+
+    document.querySelector('.resume-btn').addEventListener('click', function() {
+    window.open('ТАН.pdf', '_blank', 'noopener,noreferrer');
+});
 }
