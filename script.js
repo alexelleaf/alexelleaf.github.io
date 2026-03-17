@@ -63,8 +63,21 @@ document.addEventListener('DOMContentLoaded', function () {
             var projectDate = card.getAttribute('data-date') || '';
             var projectStatus = card.getAttribute('data-status') || '';
 
+            // Извлекаем ссылку из оригинальной карточки
+            var linkElement = card.querySelector('a[href]');
+            var projectUrl = linkElement ? linkElement.getAttribute('href') : '#';
+
             var item = document.createElement('div');
             item.className = 'mobile-project-item';
+            
+            // Если есть ссылка — делаем элемент кликабельным
+            if (projectUrl && projectUrl !== '#') {
+                item.style.cursor = 'pointer';
+                item.setAttribute('data-href', projectUrl);
+                item.setAttribute('role', 'link');
+                item.setAttribute('tabindex', '0');
+            }
+
             item.innerHTML =
                 '<div class="mobile-project-name">' + projectName + '</div>' +
                 '<div class="mobile-project-meta">' +
@@ -75,6 +88,28 @@ document.addEventListener('DOMContentLoaded', function () {
             mobileList.appendChild(item);
         });
     }
+
+    // Делегирование событий для мобильных карточек
+var mobileList = document.getElementById('mobile-projects-list');
+if (mobileList) {
+    mobileList.addEventListener('click', function (e) {
+        var item = e.target.closest('.mobile-project-item');
+        if (item && item.getAttribute('data-href')) {
+            window.open(item.getAttribute('data-href'), '_blank', 'noopener,noreferrer');
+        }
+    });
+    
+    // Поддержка клавиатуры (Enter/Space)
+    mobileList.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            var item = e.target.closest('.mobile-project-item');
+            if (item && item.getAttribute('data-href')) {
+                e.preventDefault();
+                window.open(item.getAttribute('data-href'), '_blank', 'noopener,noreferrer');
+            }
+        }
+    });
+}
 
     generateMobileProjectsList();
 
